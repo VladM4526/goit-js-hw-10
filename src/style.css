@@ -1,5 +1,5 @@
 * {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Jost', sans-serif;
 }
 
 .loader-hidden {
@@ -9,4 +9,36 @@
 .breed-select {
     font-size: 20px;
     font-weight: 400;
+    outline: none;
+}
+
+.loader {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.cat-info {
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    font-size: 20px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.search-card {
+    width: 500px;
+    margin-left: 50px;
+}
+
+.img-cat {
+    width: 450px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+}
+
+.title-card {
+    font-size: 25px;
 }

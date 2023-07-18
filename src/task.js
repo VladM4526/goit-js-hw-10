@@ -13,10 +13,11 @@ const selectorsSearch = {
 
 selectorsSearch.loader.classList.add("loader-hidden");
 selectorsSearch.select.setAttribute("id", "slim-select");
-selectorsSearch.select.addEventListener("change", onSearchImagesSelect);
 selectorsSearch.tagOption.setAttribute('selected', 'selected');
 selectorsSearch.tagOption.setAttribute('disabled', 'disabled');
 selectorsSearch.tagOption.textContent = 'Please selected cat';
+
+selectorsSearch.select.addEventListener("change", onSearchImagesSelect);
 
 function onSearchImagesSelect(evt) {
     selectorsSearch.loader.classList.remove("loader-hidden");
@@ -26,7 +27,8 @@ function onSearchImagesSelect(evt) {
             onSelectSearchCard(response.data[0].breeds[0], response.data[0]);
             selectorsSearch.loader.classList.add("loader-hidden");
         }).catch((error) => {
-            Notify.failure('Error getting data. Please try again later.', {
+            // Oops!. Something wrong! Please try again later. took from video in task
+            Notify.failure('Oops!. Something wrong! Please try again later.', {
                 position: 'right-top',
                 timeout: 3000,
             });
@@ -50,11 +52,11 @@ function onSelectOptions(arr) {
 
 function onSelectSearchCard({name, description, temperament}, {url}) {
     const markUpCard = `
-    <img src="${url}" alt="${name}" width="460px"/>
-    <div class="descrp-card">
+    <img class="img-cat" src="${url}" alt="${name}" />
+    <div class="search-card">
     <p class="title-card">${name}</p>
     <p class="description">${description}</p>
-    <p class="temerament">${temperament}</p>
+    <p class="cat-breed">${temperament}</p>
     </div>`;
     
     selectorsSearch.div.innerHTML = markUpCard;
