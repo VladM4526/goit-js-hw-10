@@ -30,7 +30,7 @@ function onSearchImagesSelect(evt) {
             // Oops!. Something wrong! Please try again later. took from video in task
             Notify.failure('Oops!. Something wrong! Please try again later.', {
                 position: 'right-top',
-                timeout: 3000,
+                timeout: 1000,
             });
     })
 }
