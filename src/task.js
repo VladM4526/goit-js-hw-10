@@ -12,7 +12,7 @@ const selectorsSearch = {
 }
 
 selectorsSearch.loader.classList.add("loader-hidden");
-selectorsSearch.select.setAttribute("id", "multiple");
+selectorsSearch.select.setAttribute("id", "slim-select");
 selectorsSearch.tagOption.setAttribute('selected', 'selected');
 selectorsSearch.tagOption.setAttribute('disabled', 'disabled');
 selectorsSearch.tagOption.textContent = 'Please selected cat';
@@ -38,7 +38,7 @@ fetchBreeds().then((response) => {
    
     onSelectOptions(response.data)
     new SlimSelect({
-        select: '#multiple'
+        select: '#slim-select'
     });
 });
 
