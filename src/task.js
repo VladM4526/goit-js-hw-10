@@ -27,11 +27,13 @@ function onSearchImagesSelect(evt) {
             onSelectSearchCard(response.data[0].breeds[0], response.data[0]);
             selectorsSearch.loader.classList.add("loader-hidden");
         }).catch((error) => {
+            selectorsSearch.loader.classList.add("loader-hidden");
             // Oops!. Something wrong! Please try again later. took from video in task
             Notify.failure('Oops!. Something wrong! Please try again later.', {
                 position: 'right-top',
                 timeout: 3000,
             });
+            
     })
 }
 fetchBreeds().then((response) => {
